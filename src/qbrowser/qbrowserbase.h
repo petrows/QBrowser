@@ -2,6 +2,7 @@
 #define QBROWSERBASE_H
 
 #include <QWidget>
+#include <QUrl>
 
 class QBrowserBase : public QWidget
 {
