@@ -1,0 +1,3 @@
+/* QBrowser include */
+
+#include "qbrowser.h"
