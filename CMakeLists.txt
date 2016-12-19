@@ -73,10 +73,20 @@ find_package(Qt5Network)
 find_package(Qt5Xml)
 
 if ("webkit" STREQUAL ${BROWSER_PLATFORM})
-	find_package(Qt5WebKit)
-	find_package(Qt5WebKitWidgets)
+	find_package(Qt5WebKit REQUIRED)
+	find_package(Qt5WebKitWidgets REQUIRED)
 	set(LIBS ${LIBS} Qt5::WebKit Qt5::WebKitWidgets)
 endif()
+
+# Export libs list
+set(QBROWSER_LIBS qbrowser ${LIBS})
+set(QBROWSER_LIBS ${QBROWSER_LIBS} PARENT_SCOPE)
+
+set(QBROWSER_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/src/qbrowser")
+set(QBROWSER_INCLUDES ${QBROWSER_INCLUDES} PARENT_SCOPE)
+
+set(QBROWSER_PLATFORM ${BROWSER_PLATFORM})
+set(QBROWSER_PLATFORM ${QBROWSER_PLATFORM} PARENT_SCOPE)
 
 # Source files
 file(GLOB_RECURSE SRC_LIB "src/qbrowser/*")

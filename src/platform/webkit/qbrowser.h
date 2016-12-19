@@ -9,15 +9,16 @@ class QBrowser : public QBrowserBase
 public:
 	explicit QBrowser(QWidget *parent = 0);
 
-
-
 signals:
 
 public slots:
 
 	// QBrowserBase interface
 public:
-	void navigateUrl(QUrl url);
+	void navigateUrl(const QUrl &url);
+
+private slots:
+	void unsupportedContent(QNetworkReply*);
 };
 
 #endif // QBROWSER_H

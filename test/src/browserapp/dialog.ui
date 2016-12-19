@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QWidget" name="widget" native="true"/>
+    <widget class="QBrowser" name="widget" native="true"/>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -29,6 +29,14 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QBrowser</class>
+   <extends>QWidget</extends>
+   <header location="global">QBrowser</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
